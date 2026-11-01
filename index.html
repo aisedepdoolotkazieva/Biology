@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ky">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Адамдын Эволюциясы — Интерактивдүү Илимий Музей</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar" id="navbar">
+      <div class="nav-brand">
+        <span class="brand-icon"><i class="fa-solid fa-atom"></i></span>
+        <span class="brand-title">HUMAN EVOLUTION</span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Башкы</a>
+        <a href="#intro" class="nav-link">Киришүү</a>
+        <a href="#origins" class="nav-link">Теги</a>
+        <a href="#timeline" class="nav-link">Шкала</a>
+        <a href="#anatomy" class="nav-link">Анатомия</a>
+        <a href="#tools" class="nav-link">Куралдар</a>
+        <a href="#map" class="nav-link">Миграция</a>
+        <a href="#myths" class="nav-link">Мифтер</a>
+        <a href="#quiz" class="nav-link">Тест</a>
+      </nav>
+      <div class="nav-actions">
+        <button
+          id="speakerModeBtn"
+          class="action-btn"
+          title="Айтып берүү режимы (Speaker Mode)"
+        >
+          <i class="fa-solid fa-microphone-lines"></i>
+          <span class="btn-text">Коргоо</span>
+        </button>
+        <button id="fullscreenBtn" class="action-btn" title="Толук экран">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+        <button id="mobileMenuBtn" class="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Speaker Mode Modal -->
+    <div class="speaker-modal" id="speakerModal">
+      <div class="speaker-content">
+        <button class="close-speaker" id="closeSpeaker">&times;</button>
+        <div class="speaker-header">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <h2>Окуучу үчүн сүйлөө тексти (Speaker Mode)</h2>
+        </div>
+        <div class="speaker-body" id="speakerBodyText">
+          <!-- Dynamic text populated by JS -->
+        </div>
+        <div class="speaker-footer">
+          <span class="speaker-hint"
+            >Бул текстти класстын алдында баяндама жасаганда колдонсоңуз болот
+            (30-60 секунд).</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="main-container">
+      <!-- SECTION 0: HERO SECTION -->
+      <section id="hero" class="section hero-section">
+        <div class="hero-bg">
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <span class="hero-badge">ИЛИМИЙ МУЗЕЙ КОЛЛЕКЦИЯСЫ</span>
+          <h1 class="hero-title">АДАМДЫН ЭВОЛЮЦИЯСЫ</h1>
+          <p class="hero-subtitle">
+            «Миллиондогон жылдарга созулган адамзаттын келип чыгуу жана өнүгүү
+            тарыхы»
+          </p>
+          <div class="hero-actions">
+            <a href="#intro" class="btn-primary">
+              <span>EXPLORE THE JOURNEY</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-scroll-indicator">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <span>ылдый жылдырыңыз</span>
+        </div>
+      </section>
+
+      <!-- SECTION 01: INTRODUCTION -->
+      <section
+        id="intro"
+        class="section museum-section"
+        data-speaker="Урматтуу мугалим жана классташтар! Бүгүн биз адамзаттын келип чыгуу тарыхын — биологиялык эволюцияны изилдейбиз. Эволюция — бул тирүү организмдердин муундан-муунга өтүп, айлана-чөйрөгө ыңгайлашып өзгөрүү процесси. Анын негизин Чарльз Дарвин аныктаган табигый тандалуу, тукум куучулук жана өзгөргүчтүк түзөт."
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 01</div>
+          <h2 class="section-title">Эволюция деген эмне?</h2>
+          <div class="grid-2col">
+            <div class="text-content">
+              <p class="lead-text">
+                Биологиялык эволюция — бул жер бетиндеги тиричиликтин жөнөкөй
+                формалардан татаал формаларга карай узак убакыт бою тынымсыз
+                өзгөрүү процесси.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <strong>Табигый тандалуу:</strong> Айлана-чөйрөнүн шарттарына
+                  эң жакшы ыңгайлашкан организмдердин жашап калышы жана тукум
+                  калтырышы.
+                </li>
+                <li>
+                  <strong>Тукум куучулук:</strong> Белгилердин ата-энеден бала
+                  тукумга берилиши.
+                </li>
+                <li>
+                  <strong>Өзгөргүчтүк:</strong> Организмдердин жаңы белгилерге
+                  ээ болуу касиети.
+                </li>
+              </ul>
+              <div class="scientific-box">
+                <i class="fa-solid fa-flask"></i>
+                <div>
+                  <strong>Илимий мисал:</strong> Бактериялардын антибиотиктерге
+                  туруктуулугу же канаттуулардын тумшуктарынын формалары табигый
+                  тандалуунун көрүнүктүү мисалдары болуп саналат.
+                </div>
+              </div>
+            </div>
+            <div class="visual-content">
+              <div class="cinematic-card">
+                <img
+                  src="https://cf2.ppt-online.org/files2/slide/z/z1r3mUKVoWx0p4abwJYlvT6nQD2eh5ksiEudyXjCF/slide-1.jpg"
+                  alt="Илимий схема"
+                  class="museum-img"
+                />
+                <div class="img-caption">
+                  <span class="tag">Илимий реконструкция</span>
+                  <h4>Биологиялык эволюциянын схемасы</h4>
+                  <p>Табигый тандалуу механизминин визуалдык модели.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 02: HUMAN ORIGINS -->
+      <section
+        id="origins"
+        class="section museum-section alt-bg"
+        data-speaker="Адам азыркы маймылдардан (шимпанзеден) түздөн-түз пайда болгон эмес. Бул кеңири тараган жаңылыш түшүнүк. Чындыгында, биздин жана азыркы маймылдардын мындан 6-8 миллион жыл мурун жашаган жалпы орток ата-теги болгон. Африка кургактыгы бул эволюциянын бешиги деп бекер жерден аталбайт."
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 02</div>
+          <h2 class="section-title">Адамдын келип чыгышы</h2>
+          <div class="split-layout">
+            <div class="split-text">
+              <p>
+                Адамзаттын эволюциялык тарыхы — бул сызыктуу эмес, бутакталган
+                татаал дарак. Африканын чөлдүү жана саванна аймактарынан
+                табылган байыркы фоссилдер (таштанды калдыктар) биздин
+                тарыхыбызды ачууда ачкыч ролду ойнойт.
+              </p>
+              <div class="myth-buster">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                  <strong>Маанилүү эскертүү:</strong> «Адам маймылдан жаралган»
+                  деген сөз ката. Биз азыркы маймылдар менен «тууган» ата-текке
+                  ээбиз, бирок алар биздин ата-тегибиз эмес.
+                </div>
+              </div>
+            </div>
+            <div class="split-gallery">
+              <div class="gallery-item">
+                <img
+                  src="http://world.meros.uz/uploads/gallery/b3/32/b5/b3c32db5f499ab6458086d4993f7a5a4.jpg"
+                  alt="Фоссил"
+                />
+                <div class="caption">Археологиялык фоссил табылгасы</div>
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="https://static.tildacdn.com/tild3564-3336-4236-b131-383664653436/_-2.jpg"
+                  alt="Африка табияты"
+                />
+                <div class="caption">Африка — эволюциянын бешиги</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 03: EVOLUTION TIMELINE -->
+      <section
+        id="timeline"
+        class="section museum-section"
+        data-speaker="Бул жерде биз адам эволюциясынын негизги өкүлдөрүн убакыт шкаласы аркылуу көрөбүз: Австралопитектерден баштап, курал жасаган Homo habilis, отту өздөштүргөн Homo erectus, акылдуу неандерталдар жана азыркы Homo sapiens түргө чейин."
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 03</div>
+          <h2 class="section-title">Эволюциялык Шкала (Timeline)</h2>
+          <p class="section-desc">
+            Төмөнкү этаптарды басып, адам эволюциясынын негизги өкүлдөрү менен
+            таанышыңыз:
+          </p>
+
+          <div class="timeline-interactive">
+            <div class="timeline-nav" id="timelineNav">
+              <button class="t-btn active" data-index="0">
+                Australopithecus
+              </button>
+              <button class="t-btn" data-index="1">Homo habilis</button>
+              <button class="t-btn" data-index="2">Homo erectus</button>
+              <button class="t-btn" data-index="3">Homo heidelbergensis</button>
+              <button class="t-btn" data-index="4">Neanderthals</button>
+              <button class="t-btn" data-index="5">Homo sapiens</button>
+            </div>
+
+            <div class="timeline-display" id="timelineDisplay">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 10: ANATOMICAL EVOLUTION -->
+      <section
+        id="anatomy"
+        class="section museum-section alt-bg"
+        data-speaker="Адамдын дене түзүлүшү миллион жылдар бою чоң өзгөрүүлөргө дуушар болгон. Эки буттап басуу колду боштондукка чыгарып, баш сөөктүн жана мээнин көлөмүнүн чоңоюшуна шарт түзгөн."
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 10</div>
+          <h2 class="section-title">Анатомиялык эволюция</h2>
+          <p class="section-desc">
+            Дененин негизги бөлүктөрүнүн өзгөрүү динамикасын карап чыгыңыз:
+          </p>
+
+          <div class="anatomy-grid">
+            <div class="anatomy-menu" id="anatomyMenu">
+              <button class="anat-btn active" data-target="skull">
+                Баш сөөгү & Мээ
+              </button>
+              <button class="anat-btn" data-target="spine">Омуртка</button>
+              <button class="anat-btn" data-target="pelvis">
+                Жамбаш сөөгү
+              </button>
+              <button class="anat-btn" data-target="hands">
+                Колдор & Манжалар
+              </button>
+              <button class="anat-btn" data-target="feet">Буттар</button>
+            </div>
+            <div class="anatomy-viewer" id="anatomyViewer">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 12: STONE TOOLS -->
+      <section
+        id="tools"
+        class="section museum-section"
+        data-speaker="Таш куралдар — адамдын акыл-эсинин өнүккөндүгүнүн эң башкы далили. Олдувай маданиятынан баштап татаал найзаларга жана кол чабууларга чейин куралдар жашоону жеңилдеткен."
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 12</div>
+          <h2 class="section-title">Таш куралдардын маданияты</h2>
+          <div class="tools-grid">
+            <div class="tool-card">
+              <img
+                src="https://avatars.mds.yandex.net/i?id=07cb1552692dff60e58429753a47fcbe_l-5383525-images-thumbs&n=13"
+                alt="Олдувай куралдары"
+              />
+              <h3>Олдувай маданияты</h3>
+              <p>
+                Б.э.ч. 2.6 млн жыл мурун. Жөнөкөй кыргычтар жана кескич таштар.
+              </p>
+            </div>
+            <div class="tool-card">
+              <img
+                src="https://avatars.mds.yandex.net/i?id=93280fce2e3e6097282bd4398fbe2c44_l-5238994-images-thumbs&n=13"
+                alt="Ашель маданияты"
+              />
+              <h3>Ашель маданияты</h3>
+              <p>
+                Б.э.ч. 1.7 млн жыл мурун. Симметриялуу кол балталары жана
+                аңчылык куралдары.
+              </p>
+            </div>
+            <div class="tool-card">
+              <img
+                src="https://avatars.mds.yandex.net/i?id=baac11c880ea31b8689cda3350cb6d34_l-5262308-images-thumbs&n=13"
+                alt="Мустье маданияты"
+              />
+              <h3>Мустье маданияты</h3>
+              <p>
+                Неандерталдардын доору. Татаал иштетилген учтуу куралдар жана
+                бычактар.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 15: OUT OF AFRICA MAP -->
+      <section
+        id="map"
+        class="section museum-section alt-bg"
+        data-speaker="«Африкадан чыгуу» теориясы боюнча, азыркы адамдар Африкада пайда болуп, кийин бүткүл дүйнөгө — Азияга, Европага, Австралияга жана Америкага тараган. Бул миграция миңдеген жылдарга созулган."
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 15</div>
+          <h2 class="section-title">Африкадан таралуу (Out of Africa)</h2>
+          <div class="map-container-box">
+            <div class="map-info-panel">
+              <h3>Миграция жолдору</h3>
+              <p>
+                Адамзаттын Африкадан чыгып, Евразия, Австралия жана Америка
+                континенттерине таралуу багыттары илимий картада көрсөтүлгөн.
+              </p>
+              <ul class="migration-steps">
+                <li>
+                  <strong>1-этап:</strong> Чыгыш Африкадан Жакынкы Чыгышка чыгуу
+                  (~100 миң жыл мурун).
+                </li>
+                <li>
+                  <strong>2-этап:</strong> Азиянын жээктери аркылуу Австралияга
+                  жетүү (~65 миң жыл мурун).
+                </li>
+                <li>
+                  <strong>3-этап:</strong> Европага таралуу (~40 миң жыл мурун).
+                </li>
+                <li>
+                  <strong>4-этап:</strong> Берингия аркылуу Америкага өтүү (~15
+                  миң жыл мурун).
+                </li>
+              </ul>
+            </div>
+            <div class="map-visual">
+              <img
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80"
+                alt="Дүйнө картасы"
+                class="world-map-img"
+              />
+              <div class="map-caption">
+                Байыркы миграциянын болжолдуу багыттары
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 16: MYTHS OR FACTS -->
+      <section
+        id="myths"
+        class="section museum-section"
+        data-speaker="Эмне чын, эмне миф? Келгиле, адам эволюциясы тууралуу кеңири таралган жаңылыш түшүнүктөрдү илимий фактылар аркылуу текшерип көрөлү."
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 16</div>
+          <h2 class="section-title">Миф же Чындык?</h2>
+          <p class="section-desc">Суроону басып, илимий жоопту билиңиз:</p>
+
+          <div class="myths-grid" id="mythsGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 18: INTERACTIVE QUIZ -->
+      <section
+        id="quiz"
+        class="section museum-section alt-bg"
+        data-speaker="Эми алган билимибизди текшерүү үчүн 10 суроодон турган интерактивдүү тесттен өтөлү. Туура жоопторду тандап, өзүбүздүн жыйынтыгыбызды көрөлү!"
+      >
+        <div class="section-container">
+          <div class="section-number">SECTION 18</div>
+          <h2 class="section-title">Илимий Тест</h2>
+
+          <div class="quiz-box" id="quizBox">
+            <div id="quizQuestionContainer">
+              <div class="quiz-progress-bar">
+                <span id="currentQuestionNum">1</span> /
+                <span id="totalQuestionNum">10</span>
+              </div>
+              <h3 id="quizQuestionText">Суроо жүктөлүүдө...</h3>
+              <div class="quiz-options" id="quizOptions">
+                <!-- Options generated by JS -->
+              </div>
+            </div>
+            <div id="quizResultContainer" class="hidden">
+              <h3>Тест аяктады! 🎉</h3>
+              <p id="quizScoreText">Сиздин жыйынтык:</p>
+              <button id="restartQuizBtn" class="btn-primary">
+                Кайра баштоо
+              </button>
+            </div>
+            <div class="quiz-footer">
+              <button id="nextQuizBtn" class="btn-secondary hidden">
+                Кийинки суроо
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 19: CONCLUSION & SOURCES -->
+      <section
+        id="conclusion"
+        class="section museum-section"
+        data-speaker="Жыйынтыктап айтканда, адамдын эволюциясы — бул миллиондогон жылдардын натыйжасы, табияттын жана акыл-эстин улуу жеңиши. Биздин өткөн тарыхыбызды билүү аркылуу биз келечегибизди жакшыраак түшүнөбүз. Көңүл бурганыңыздарга рахмат!"
+      >
+        <div class="section-container text-center">
+          <div class="section-number">SECTION 19</div>
+          <h2 class="section-title">Жыйынтык & Илимий Булактар</h2>
+          <p class="lead-text max-w">
+            Адамзаттын тарыхы — бул изилдөөлөр, ачылыштар жана тынымсыз өнүгүү
+            жолу. Музей экспозициябыз ушуну менен аяктайт.
+          </p>
+
+          <div class="sources-box">
+            <h3>Негизги илимий булактар:</h3>
+            <ul>
+              <li>Smithsonian Human Origins Program</li>
+              <li>Natural History Museum (London)</li>
+              <li>American Museum of Natural History</li>
+              <li>Nature & Science Scientific Journals</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        &copy; 2026 Human Evolution Interactive Museum. Кыргыз республикасы.
+        Бардык укуктар корголгон.
+      </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
